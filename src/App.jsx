@@ -2,147 +2,182 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  const [selectedPlan, setSelectedPlan] = useState('annual-adv')
+  const [selectedPlan, setSelectedPlan] = useState('yearly-subscription')
 
   const topPlans = [
     {
-      id: 'annual-adv',
-      title: 'Support',
-      description: '10 hours support per year',
-      price: '+ $0'
+      id: 'basic-subscription',
+      title: 'Advantage',
+      badge: 'RENTED',
+      description: 'Use our software and updates as long as you subscribe, with support-level: Advantage.',
+      price: '+$0',
+      priceSubtext: '',
+      yearlyAfterFirst: '$110 yearly after first year',
+      footer: {
+        updates: 'Access to latest version',
+        support: 'Support-level: Advantage'
+      },
+      cart: {
+        licenseType: 'SaaS License',
+        productName: 'Highcharts Core',
+        seatPrice: 366,
+        subscription: 'Advantage Subscription',
+        subscriptionNote: 'Included in license',
+        total: 366
+      }
     },
     {
-      id: 'annual-advplus',
-      title: 'Premium Support',
-      description: '20 hours support per year',
-      price: '+ $487'
+      id: 'yearly-subscription',
+      title: 'Advantage+',
+      badge: 'RENTED',
+      description: 'Use our software and updates as long as you subscribe, with support-level: Advantage+.',
+      price: '+$146',
+      priceSubtext: 'yearly',
+      yearlyAfterFirst: '$146 yearly after first year',
+      footer: {
+        updates: 'Access to latest version',
+        support: 'Support-level: Advantage+'
+      },
+      cart: {
+        licenseType: 'SaaS License',
+        productName: 'Highcharts Core',
+        seatPrice: 366,
+        subscription: 'Advantage+ Subscription',
+        subscriptionNote: '146.00 USD',
+        total: 512
+      }
     },
     {
-      id: 'perpetual-advplus',
-      title: 'Premium Support incl.',
-      description: '20 hours support per year',
-      price: '+ $839'
-    }
-  ]
-
-  const bottomPlans = [
-    {
-      id: 'annual-adv',
-      title: 'Subscription + Support',
-      description: 'Pay yearly for continuous access to latest versions and support. Active subscription required for software use.',
-      price: '+ $0'
-    },
-    {
-      id: 'annual-advplus',
-      title: 'Subscription + Premium Support',
-      description: 'Annual subscription with premium support, latest releases, and dedicated engineering guidance.',
-      price: '+ $487'
-    },
-    {
-      id: 'perpetual-advplus',
-      title: 'Pay once + Premium Support for 1 year',
-      description: 'Own forever with one payment. Includes 1 year of updates and premium support. Continue using your version indefinitely.',
-      price: '+ $839'
+      id: 'lifetime-license',
+      title: 'Lifetime',
+      badge: 'OWNED',
+      description: 'Use our software forever, and have access to support and updates for a whole year for free. Subscribe to Advantage+ to always have the newest version.',
+      price: '+ $473',
+      priceSubtext: 'one-time fee',
+      yearlyAfterFirst: '$336 yearly for updates after first year',
+      footer: {
+        extra: 'Lifetime access to the version available at purchase.',
+        updates: 'Access to version-updates as long as you subscribe to Advantage+.',
+        support: 'Support: 1 year Advantage+ included'
+      },
+      cart: {
+        licenseType: 'perpetual SaaS License',
+        productName: 'Highcharts Core',
+        seatPrice: 366,
+        subscription: 'Lifetime License',
+        subscriptionNote: '473.00 USD',
+        total: 839
+      }
     }
   ]
 
   return (
     <div className="App">
-      <h1 className="main-heading">License configuration</h1>
+      <h1 className="main-heading">Rent or own?</h1>
+      <p className="main-description">Choose the plan that best suits your needs.</p>
       
-      <div className="license-groups">
-        {/* Subscription Group */}
-        <div className="license-group">
-          <div className="group-label">Subscription-based access</div>          <p className="group-description">
-            You can use our software with the newest version as long as you subscribe.
-          </p>          <div className="group-plans">
-            {topPlans.filter(p => p.id.startsWith('annual')).map((plan) => (
-              <div
-                key={plan.id}
-                className={`plan-card ${selectedPlan === plan.id ? 'selected' : ''}`}
-                onClick={() => setSelectedPlan(plan.id)}
-              >
-                <div className="plan-header">
-                  <div className="plan-title-section">
-                    <input
-                      type="radio"
-                      name="plan"
-                      value={plan.id}
-                      checked={selectedPlan === plan.id}
-                      onChange={() => setSelectedPlan(plan.id)}
-                      className="plan-radio"
-                    />
-                    <h2 className="plan-title">{plan.title}</h2>
-                  </div>
-                </div>
-                
-                <p className="plan-description">{plan.description}</p>
-                
-                <div className="plan-price">{plan.price}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Perpetual Group */}
-        <div className="license-group">
-          <div className="group-label">Forever access</div>          <p className="group-description">
-            You can use our software forever, but only update to newest versions as long as you subscribe to support. First year is free!
-          </p>          <div className="group-plans">
-            {topPlans.filter(p => p.id.startsWith('perpetual')).map((plan) => (
-              <div
-                key={plan.id}
-                className={`plan-card ${selectedPlan === plan.id ? 'selected' : ''}`}
-                onClick={() => setSelectedPlan(plan.id)}
-              >
-                <div className="plan-header">
-                  <div className="plan-title-section">
-                    <input
-                      type="radio"
-                      name="plan"
-                      value={plan.id}
-                      checked={selectedPlan === plan.id}
-                      onChange={() => setSelectedPlan(plan.id)}
-                      className="plan-radio"
-                    />
-                    <h2 className="plan-title">{plan.title}</h2>
-                  </div>
-                </div>
-                
-                <p className="plan-description">{plan.description}</p>
-                
-                <div className="plan-price">{plan.price}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <div className="compact-plans-section">
-        <h2 className="section-heading">How would you pay?</h2>
-        <div className="compact-plans-list">
-          {bottomPlans.map((plan) => (
-            <div 
-              key={`compact-${plan.id}`} 
-              className="compact-plan-item"
-              onClick={() => setSelectedPlan(plan.id)}
-            >
-              <input
-                type="radio"
-                name="plan"
-                value={plan.id}
-                checked={selectedPlan === plan.id}
-                onChange={() => setSelectedPlan(plan.id)}
-                className="compact-plan-radio"
-              />
-              <div className="compact-plan-content">
-                <h3 className="compact-plan-title">{plan.title}</h3>
-                <p className="compact-plan-description">{plan.description}</p>
-              </div>
-              <div className="compact-plan-price">{plan.price}</div>
+      <div className="main-content-wrapper">
+        <div className="rent-own-container">
+        {topPlans.map((plan) => (
+          <div
+            key={plan.id}
+            className={`rent-own-card ${selectedPlan === plan.id ? 'selected' : ''} ${plan.badge.toLowerCase()}`}
+            onClick={() => setSelectedPlan(plan.id)}
+          >
+            <div className={`rent-own-tab ${plan.badge.toLowerCase()}`}>
+              {plan.badge === 'RENTED' ? 'RENT' : 'OWN'}
             </div>
-          ))}
+            <div className="rent-own-header">
+              <div className="rent-own-title-section">
+                <input
+                  type="radio"
+                  name="main-plan"
+                  value={plan.id}
+                  checked={selectedPlan === plan.id}
+                  onChange={() => setSelectedPlan(plan.id)}
+                  className="plan-radio"
+                />
+                <div>
+                  <div className="rent-own-title-row">
+                    <h2 className="rent-own-title">{plan.title}</h2>
+                  </div>
+                </div>
+              </div>
+              <div className="rent-own-price-section">
+                <div className="rent-own-price">{plan.price}</div>
+                <div className="rent-own-price-subtext">{plan.priceSubtext || '\u00A0'}</div>
+              </div>
+            </div>
+            
+            <p className="rent-own-description">{plan.description}</p>
+            
+            <div className="rent-own-footer">
+              <h3 className="footer-heading">What's included</h3>
+              {plan.footer.extra && (
+                <div className="footer-item">
+                  <span className="footer-icon">✓</span>
+                  <span>{plan.footer.extra}</span>
+                </div>
+              )}
+              <div className="footer-item">
+                <span className="footer-icon">✓</span>
+                <span>{plan.footer.updates}</span>
+              </div>
+              <div className="footer-item">
+                <span className="footer-icon">✓</span>
+                <span>{plan.footer.support}</span>
+              </div>
+            </div>
+            
+            <div className="yearly-after-first">{plan.yearlyAfterFirst}</div>
+          </div>
+        ))}
         </div>
+
+        {/* Shopping Cart */}
+        {(() => {
+          const selectedPlanData = topPlans.find(p => p.id === selectedPlan);
+          if (!selectedPlanData) return null;
+          return (
+            <div className="shopping-cart">
+              <div className="cart-header">
+                <h2 className="cart-title">Cart</h2>
+                <button className="cart-clear-btn">🗑️</button>
+              </div>
+              
+              <div className="cart-product">
+                <span className="cart-product-name">{selectedPlanData.cart.productName}</span>
+                <button className="cart-delete-btn">Delete</button>
+              </div>
+              
+              <div className="cart-divider"></div>
+              
+              <div className="cart-seat-info">
+                <div className="cart-seat-count">x 1 Developer Seat</div>
+                <div className="cart-seat-price">{selectedPlanData.cart.seatPrice.toFixed(2)} USD</div>
+              </div>
+              
+              <div className="cart-divider"></div>
+              
+              <div className="cart-subscription">
+                <div className="cart-subscription-name">{selectedPlanData.cart.subscription}</div>
+                <div className="cart-subscription-note">{selectedPlanData.cart.subscriptionNote}</div>
+              </div>
+              
+              <div className="cart-divider"></div>
+              
+              <div className="cart-total-section">
+                <div className="cart-total-label">Total</div>
+                <div className="cart-total-row">
+                  <span className="cart-total-amount">{selectedPlanData.cart.total.toFixed(2)}</span>
+                  <span className="cart-total-currency">USD</span>
+                </div>
+              </div>
+              
+              <button className="cart-checkout-btn">Checkout</button>
+            </div>
+          );
+        })()}
       </div>
     </div>
   )
