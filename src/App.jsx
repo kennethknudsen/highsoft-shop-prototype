@@ -7,15 +7,15 @@ function App() {
   const topPlans = [
     {
       id: 'basic-subscription',
-      title: 'Advantage',
+      title: 'Subscription',
       badge: 'RENTED',
       description: 'Use our software and updates as long as you subscribe, with support-level: Advantage.',
       price: '+$0',
       priceSubtext: '',
-      yearlyAfterFirst: '$110 yearly after first year',
+      yearlyAfterFirst: '$366 yearly after first year',
       footer: {
-        updates: 'Access to latest version',
-        support: 'Support-level: Advantage'
+        updates: 'Latest versions',
+        support: 'Advantage'
       },
       cart: {
         licenseType: 'SaaS License',
@@ -28,22 +28,22 @@ function App() {
     },
     {
       id: 'yearly-subscription',
-      title: 'Advantage+',
+      title: 'Subscription+',
       badge: 'RENTED',
       description: 'Use our software and updates as long as you subscribe, with support-level: Advantage+.',
       price: '+$146',
       priceSubtext: 'yearly',
-      yearlyAfterFirst: '$146 yearly after first year',
+      yearlyAfterFirst: '$512 yearly after first year',
       footer: {
-        updates: 'Access to latest version',
-        support: 'Support-level: Advantage+'
+        updates: 'Latest versions',
+        support: 'Advantage+'
       },
       cart: {
         licenseType: 'SaaS License',
         productName: 'Highcharts Core',
         seatPrice: 366,
         subscription: 'Advantage+ Subscription',
-        subscriptionNote: '146.00 USD',
+        subscriptionNote: '146.00 USD yearly',
         total: 512
       }
     },
@@ -58,14 +58,14 @@ function App() {
       footer: {
         extra: 'Lifetime access to the version available at purchase.',
         updates: 'Access to version-updates as long as you subscribe to Advantage+.',
-        support: 'Support: 1 year Advantage+ included'
+        support: 'Advantage+ 1 year included'
       },
       cart: {
         licenseType: 'perpetual SaaS License',
         productName: 'Highcharts Core',
-        seatPrice: 366,
-        subscription: 'Lifetime License',
-        subscriptionNote: '473.00 USD',
+        seatPrice: 839,
+        subscription: 'Advantage+ Subscription',
+        subscriptionNote: 'First year included, then 335.60 USD yearly',
         total: 839
       }
     }
@@ -84,8 +84,9 @@ function App() {
             className={`rent-own-card ${selectedPlan === plan.id ? 'selected' : ''} ${plan.badge.toLowerCase()}`}
             onClick={() => setSelectedPlan(plan.id)}
           >
-            <div className={`rent-own-tab ${plan.badge.toLowerCase()}`}>
-              {plan.badge === 'RENTED' ? 'RENT' : 'OWN'}
+            <div className="yearly-after-first">
+              <span className="yearly-label">{plan.badge === 'RENTED' ? 'RENT' : 'OWN'}</span>
+              <span className="yearly-price">{plan.yearlyAfterFirst}</span>
             </div>
             <div className="rent-own-header">
               <div className="rent-own-title-section">
@@ -113,6 +114,8 @@ function App() {
             
             <div className="rent-own-footer">
               <h3 className="footer-heading">What's included</h3>
+              
+              <h4 className="footer-subheading">Version</h4>
               {plan.footer.extra && (
                 <div className="footer-item">
                   <span className="footer-icon">✓</span>
@@ -123,13 +126,13 @@ function App() {
                 <span className="footer-icon">✓</span>
                 <span>{plan.footer.updates}</span>
               </div>
+              
+              <h4 className="footer-subheading">Support-level</h4>
               <div className="footer-item">
                 <span className="footer-icon">✓</span>
                 <span>{plan.footer.support}</span>
               </div>
             </div>
-            
-            <div className="yearly-after-first">{plan.yearlyAfterFirst}</div>
           </div>
         ))}
         </div>
@@ -142,12 +145,10 @@ function App() {
             <div className="shopping-cart">
               <div className="cart-header">
                 <h2 className="cart-title">Cart</h2>
-                <button className="cart-clear-btn">🗑️</button>
               </div>
               
               <div className="cart-product">
                 <span className="cart-product-name">{selectedPlanData.cart.productName}</span>
-                <button className="cart-delete-btn">Delete</button>
               </div>
               
               <div className="cart-divider"></div>
