@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import LayoutNav from './LayoutNav.jsx'
 import './App.css'
 
 function App() {
@@ -73,6 +74,7 @@ function App() {
 
   return (
     <div className="App">
+      <LayoutNav current="#/" />
       <h1 className="main-heading">Rent or own?</h1>
       <p className="main-description">Choose the plan that best suits your needs.</p>
       
