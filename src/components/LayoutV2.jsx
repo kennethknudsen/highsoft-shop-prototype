@@ -74,13 +74,6 @@ export default function LayoutV2() {
 
   return (
     <div className="v2">
-
-      <nav className="v2-nav">
-        <div className="v2-nav-inner">
-          <div className="v2-logo"></div>
-        </div>
-      </nav>
-
       <div className="v2-hero">
         <div className="v2-hero-inner">
           <h1 className="v2-hero-title">Choose your plan</h1>
