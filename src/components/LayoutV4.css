@@ -1,4 +1,8 @@
 /* ── V2 Layout ── */
+body {
+  padding: 0;
+  margin: 0;
+}
 .v2 {
   min-height: 100vh;
   background: #f7f8fc;

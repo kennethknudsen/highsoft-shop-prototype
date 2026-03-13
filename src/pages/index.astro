@@ -11,69 +11,115 @@ const base = import.meta.env.BASE_URL;
     <meta name="generator" content={Astro.generator} />
     <title>Shop Prototypes</title>
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
       body {
         font-family:
           -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 60px 20px;
-        background: linear-gradient(135deg, #c7b8ea 0%, #b8c5ea 100%);
         min-height: 100vh;
+        background: #f7f8fc;
+        color: #1a1a2e;
+      }
+      .hero {
+        background: linear-gradient(135deg, #5b4d93 0%, #7c6bc4 100%);
+        padding: 64px 24px;
+        text-align: center;
       }
       h1 {
-        color: #2d3748;
-        margin-bottom: 40px;
-        font-size: 2.5rem;
+        color: #fff;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+        letter-spacing: -0.4px;
+      }
+      .subtitle {
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 0.95rem;
       }
       .layout-grid {
-        display: grid;
-        gap: 24px;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        max-width: 560px;
+        margin: -32px auto 0;
+        padding: 0 24px 64px;
       }
       .layout-card {
-        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        background: #fff;
         border-radius: 12px;
-        padding: 32px;
+        padding: 24px 28px;
         text-decoration: none;
         color: inherit;
-        transition: all 0.3s ease;
-        border: 2px solid transparent;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        border: 2px solid #e8e8f0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        transition: all 0.2s ease;
       }
       .layout-card:hover {
         border-color: #5b4d93;
-        box-shadow: 0 4px 16px rgba(91, 77, 147, 0.3);
-        transform: translateY(-2px);
+        box-shadow: 0 6px 24px rgba(91, 77, 147, 0.15);
+        transform: translateY(-1px);
       }
-      .layout-card h2 {
-        margin: 0 0 12px;
+      .layout-card:hover .arrow {
+        transform: translateX(4px);
         color: #5b4d93;
-        font-size: 1.5rem;
       }
-      .layout-card p {
-        margin: 0;
-        color: #666;
-        line-height: 1.6;
+      .card-text h2 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #1a1a2e;
+        margin-bottom: 4px;
+      }
+      .card-text p {
+        font-size: 0.82rem;
+        color: #888;
+        line-height: 1.5;
+      }
+      .arrow {
+        font-size: 1.4rem;
+        color: #ccc;
+        flex-shrink: 0;
+        transition: all 0.2s ease;
       }
     </style>
   </head>
   <body>
-    <h1>Shop Layout Prototypes</h1>
+    <div class="hero">
+      <h1>Shop Layout Prototypes</h1>
+      <p class="subtitle">Select a layout to preview</p>
+    </div>
     <div class="layout-grid">
       <a href={`${base}/v2`} class="layout-card">
-        <h2>Layout V2</h2>
-        <p>Three-card layout with recommended badge and feature descriptions</p>
+        <div class="card-text">
+          <h2>Layout V2</h2>
+          <p>
+            Three-card layout with recommended badge and feature descriptions
+          </p>
+        </div>
+        <span class="arrow">&#8594;</span>
       </a>
       <a href={`${base}/v3`} class="layout-card">
-        <h2>Layout V3</h2>
-        <p>
-          Two-card layout with Premium Support upgrade option and comparison
-          modal
-        </p>
+        <div class="card-text">
+          <h2>Layout V3</h2>
+          <p>
+            Two-card layout with Premium Support upgrade option and comparison
+            modal
+          </p>
+        </div>
+        <span class="arrow">&#8594;</span>
       </a>
       <a href={`${base}/v4`} class="layout-card">
-        <h2>Layout V4</h2>
-        <p>Single card with toggle between Subscription and Lifetime plans</p>
+        <div class="card-text">
+          <h2>Layout V4</h2>
+          <p>Single card with toggle between Subscription and Lifetime plans</p>
+        </div>
+        <span class="arrow">&#8594;</span>
       </a>
     </div>
   </body>

@@ -1,5 +1,8 @@
 /* ── Multi-card layout extras (Layout 2 & 3) ── */
-
+body {
+  padding: 0;
+  margin: 0;
+}
 /* Wider container for 3-card layout */
 .v2-content--wide {
   max-width: 1200px;
