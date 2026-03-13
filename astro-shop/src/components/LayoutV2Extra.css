@@ -1,0 +1,209 @@
+/* ── Multi-card layout extras (Layout 2 & 3) ── */
+
+/* Wider container for 3-card layout */
+.v2-content--wide {
+  max-width: 1200px;
+}
+
+.v2x-main {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 24px;
+  align-items: start;
+}
+
+/* Compact cart for layout 2 */
+.v2-content--wide .v2-cart-inner {
+  padding: 20px 18px;
+}
+.v2-content--wide .v2-cart-heading {
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+}
+.v2-content--wide .v2-cart-product-row {
+  margin-bottom: 12px;
+}
+.v2-content--wide .v2-cart-product-name {
+  font-size: 0.85rem;
+}
+.v2-content--wide .v2-cart-license-badge {
+  font-size: 0.6rem;
+  padding: 2px 6px;
+}
+.v2-content--wide .v2-cart-line-items {
+  gap: 10px;
+  padding: 12px 0;
+}
+.v2-content--wide .v2-cart-line-label {
+  font-size: 0.82rem;
+}
+.v2-content--wide .v2-cart-line-value {
+  font-size: 0.82rem;
+}
+.v2-content--wide .v2-cart-line-value-sub {
+  font-size: 0.72rem;
+}
+.v2-content--wide .v2-cart-total {
+  padding: 14px 0 18px;
+}
+.v2-content--wide .v2-cart-total-number {
+  font-size: 1.5rem;
+}
+.v2-content--wide .v2-cart-total-currency {
+  font-size: 0.8rem;
+}
+.v2-content--wide .v2-cart-checkout {
+  padding: 12px;
+  font-size: 0.85rem;
+}
+.v2-content--wide .v2-cart-secure {
+  font-size: 0.65rem;
+}
+
+.v2x-cards-grid {
+  display: grid;
+  gap: 18px;
+}
+.v2x-cards-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.v2x-cards-grid--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Selectable card overrides */
+.v2x-card--selectable {
+  cursor: pointer;
+  border: 2px solid #e8e8f0;
+  transition: all 0.2s ease;
+}
+.v2x-card--selectable:hover {
+  border-color: #c4bce0;
+  box-shadow: 0 4px 20px rgba(91, 77, 147, 0.1);
+}
+.v2x-card--selected {
+  border-color: #5b4d93;
+  box-shadow: 0 4px 24px rgba(91, 77, 147, 0.18);
+}
+
+.v2x-card-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+/* Tighter spacing for multi-card layouts */
+.v2x-cards-grid .v2-card {
+  padding: 24px 20px;
+}
+.v2x-cards-grid .v2-card-top {
+  margin-bottom: 16px;
+}
+.v2x-cards-grid .v2-card-price-block {
+  margin-bottom: 20px;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.v2x-cards-grid .v2-card-features {
+  gap: 10px;
+  margin-bottom: 16px;
+  padding-top: 0;
+  border-top: none;
+}
+.v2x-cards-grid .v2-feature-row {
+  gap: 10px;
+  align-items: center;
+}
+.v2x-cards-grid .v2-feature-label {
+  font-size: 0.84rem;
+  margin-bottom: 0;
+}
+.v2x-cards-grid .v2-feature-desc {
+  font-size: 0.76rem;
+}
+.v2x-cards-grid .v2-card-price {
+  font-size: 2rem;
+}
+.v2x-cards-grid .v2-card-title {
+  font-size: 1.15rem;
+}
+.v2x-cards-grid .v2-card-tagline {
+  margin-left: 28px;
+  font-size: 0.78rem;
+}
+.v2x-cards-grid .v2-card-description {
+  margin-left: 28px;
+  font-size: 0.76rem;
+  margin-top: 6px;
+}
+
+/* Floating recommended ribbon centered on top edge */
+.v2x-card--has-ribbon {
+  position: relative;
+  overflow: visible;
+}
+.v2x-card-ribbon-floating {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #fff;
+  background: linear-gradient(135deg, #e8872a 0%, #f5a623 100%);
+  padding: 5px 16px;
+  border-radius: 20px;
+  white-space: nowrap;
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(232, 135, 42, 0.3);
+}
+.v2x-cards-grid .v2-radio {
+  width: 18px;
+  height: 18px;
+}
+.v2x-cards-grid .v2-radio:checked::after {
+  top: 2px;
+  left: 2px;
+  width: 10px;
+  height: 10px;
+}
+.v2x-cards-grid .v2-renewal-note {
+  padding: 10px 12px;
+  font-size: 0.76rem;
+}
+
+/* Addon tighter in multi-card */
+.v2x-cards-grid .v2-addon {
+  padding: 14px 16px;
+  gap: 10px;
+}
+.v2x-cards-grid .v2-addon-title {
+  font-size: 0.84rem;
+}
+.v2x-cards-grid .v2-addon-price {
+  font-size: 0.82rem;
+}
+.v2x-cards-grid .v2-addon-desc {
+  font-size: 0.74rem;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .v2x-main {
+    grid-template-columns: 1fr;
+  }
+  .v2-cart {
+    position: static;
+  }
+}
+@media (max-width: 768px) {
+  .v2x-cards-grid--3 {
+    grid-template-columns: 1fr;
+  }
+  .v2x-cards-grid--2 {
+    grid-template-columns: 1fr;
+  }
+}

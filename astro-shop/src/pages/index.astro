@@ -1,0 +1,80 @@
+---
+
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Shop Prototypes</title>
+    <style>
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 60px 20px;
+        background: linear-gradient(135deg, #c7b8ea 0%, #b8c5ea 100%);
+        min-height: 100vh;
+      }
+      h1 {
+        color: #2d3748;
+        margin-bottom: 40px;
+        font-size: 2.5rem;
+      }
+      .layout-grid {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+      .layout-card {
+        background: white;
+        border-radius: 12px;
+        padding: 32px;
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+      .layout-card:hover {
+        border-color: #5b4d93;
+        box-shadow: 0 4px 16px rgba(91, 77, 147, 0.3);
+        transform: translateY(-2px);
+      }
+      .layout-card h2 {
+        margin: 0 0 12px;
+        color: #5b4d93;
+        font-size: 1.5rem;
+      }
+      .layout-card p {
+        margin: 0;
+        color: #666;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Shop Layout Prototypes</h1>
+    <div class="layout-grid">
+      <a href="/v2" class="layout-card">
+        <h2>Layout V2</h2>
+        <p>Three-card layout with recommended badge and feature descriptions</p>
+      </a>
+      <a href="/v3" class="layout-card">
+        <h2>Layout V3</h2>
+        <p>
+          Two-card layout with Premium Support upgrade option and comparison
+          modal
+        </p>
+      </a>
+      <a href="/v4" class="layout-card">
+        <h2>Layout V4</h2>
+        <p>Single card with toggle between Subscription and Lifetime plans</p>
+      </a>
+    </div>
+  </body>
+</html>
