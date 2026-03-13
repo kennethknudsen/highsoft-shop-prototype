@@ -13,20 +13,20 @@ function AppV4() {
       const base = 366
       const advPlus = advantagePlus ? 146 : 0
       return {
-        productName: 'Highcharts Core',
-        licenseType: 'SaaS License',
+        productName: 'Software One',
+        licenseType: 'Annual License',
         seatPrice: base,
-        subscription: advantagePlus ? 'Advantage+' : 'Advantage',
+        subscription: advantagePlus ? 'Premium Support' : 'Support',
         subscriptionNote: advantagePlus ? '146.00 USD yearly' : 'Included in license',
         total: base + advPlus,
       }
     }
     // lifetime
     return {
-      productName: 'Highcharts Core',
+      productName: 'Software One',
       licenseType: 'Perpetual License',
       seatPrice: 839,
-      subscription: 'Advantage+',
+      subscription: 'Premium Support',
       subscriptionNote: 'First year included, then 335.60 USD yearly',
       total: 839,
     }
@@ -38,7 +38,7 @@ function AppV4() {
 
       <nav className="v2-nav">
         <div className="v2-nav-inner">
-          <div className="v2-logo">Highcharts</div>
+          <div className="v2-logo"></div>
         </div>
       </nav>
 
@@ -74,7 +74,6 @@ function AppV4() {
                     </svg>
                     <div>
                       <span className="v2-feature-label">Always the latest version</span>
-                      <span className="v2-feature-desc">Access to all updates during your subscription</span>
                     </div>
                   </li>
                   <li className="v2-feature-row">
@@ -82,8 +81,7 @@ function AppV4() {
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                     <div>
-                      <span className="v2-feature-label">Advantage support</span>
-                      <span className="v2-feature-desc">Standard support included with your license</span>
+                      <span className="v2-feature-label">Support</span>
                     </div>
                   </li>
                 </ul>
@@ -100,14 +98,14 @@ function AppV4() {
                   </div>
                   <div className="v2-addon-content">
                     <div className="v2-addon-header">
-                      <span className="v2-addon-title">Upgrade to Advantage+</span>
+                      <span className="v2-addon-title">Upgrade to Premium Support</span>
                       <span className="v2-addon-price">+$146/year</span>
                     </div>
                     <span className="v2-addon-desc">Priority support with faster response times and dedicated assistance.</span>
                   </div>
                 </label>
                 <button className="v2-compare-link" onClick={() => setShowCompare(true)}>
-                  Compare Advantage vs Advantage+
+                  Compare Support vs Premium Support
                 </button>
               </>
             ) : (
@@ -129,7 +127,6 @@ function AppV4() {
                     </svg>
                     <div>
                       <span className="v2-feature-label">Permanent access</span>
-                      <span className="v2-feature-desc">Lifetime access to the version available at purchase</span>
                     </div>
                   </li>
                   <li className="v2-feature-row">
@@ -137,8 +134,7 @@ function AppV4() {
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                     <div>
-                      <span className="v2-feature-label">Advantage+ support — 1 year included</span>
-                      <span className="v2-feature-desc">Priority support with faster response times</span>
+                      <span className="v2-feature-label">Premium Support — 1 year included</span>
                     </div>
                   </li>
                 </ul>
@@ -147,7 +143,7 @@ function AppV4() {
                   <svg className="v2-renewal-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
                     <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                   </svg>
-                  <span>After the first year advantage+ renews at $336/year.</span>
+                  <span>After the first year Premium Support renews at $336/year.</span>
                 </div>
               </>
             )}
@@ -199,7 +195,7 @@ function AppV4() {
               </div>
 
               <button className="v2-cart-checkout">Proceed to Checkout</button>
-              <p className="v2-cart-secure">Secure checkout powered by Highsoft</p>
+              <p className="v2-cart-secure">Secure checkout</p>
             </div>
           </aside>
         </div>
@@ -217,8 +213,8 @@ function AppV4() {
               {/* Header row */}
               <div className="v2-compare-row v2-compare-row--header">
                 <div className="v2-compare-cell v2-compare-cell--label"></div>
-                <div className="v2-compare-cell v2-compare-cell--adv">Advantage</div>
-                <div className="v2-compare-cell v2-compare-cell--advplus">Advantage Plus</div>
+                <div className="v2-compare-cell v2-compare-cell--adv">Support</div>
+                <div className="v2-compare-cell v2-compare-cell--advplus">Premium Support</div>
               </div>
 
               {/* SUPPORT section */}

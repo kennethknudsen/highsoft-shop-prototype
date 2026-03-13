@@ -105,6 +105,7 @@
   background: transparent;
   color: #888;
   transition: all 0.15s;
+  user-select: none;
 }
 .v2-cart-toggle-btn--active {
   background: #5b4d93;
@@ -176,6 +177,7 @@
   padding: 32px;
   display: flex;
   flex-direction: column;
+  user-select: none;
 }
 
 .v2-card-top {
@@ -268,6 +270,7 @@
     border-color 0.15s,
     background 0.15s;
   margin-top: auto;
+  user-select: none;
 }
 .v2-addon:hover {
   border-color: #c4bce0;
@@ -478,6 +481,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: background 0.15s;
+  user-select: none;
 }
 .v2-cart-checkout:hover {
   background: #4a3d7f;
@@ -503,6 +507,7 @@
   text-underline-offset: 2px;
   align-self: flex-start;
   transition: color 0.15s;
+  user-select: none;
 }
 .v2-compare-link:hover {
   color: #4a3d7f;

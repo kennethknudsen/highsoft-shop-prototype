@@ -11,18 +11,18 @@ function AppV2() {
       id: 'basic-subscription',
       title: 'Subscription',
       tagline: 'Flexible access',
-      description: 'Use our software and updates as long as you subscribe, with Advantage support.',
+      description: 'Use our software and updates as long as you subscribe, with Support.',
       price: '$366',
       pricePeriod: '/year',
       features: [
         { label: 'Latest versions', desc: 'Access to all updates during your subscription' },
-        { label: 'Advantage support', desc: 'Standard support included with your license' },
+        { label: 'Support', desc: 'Standard support included with your license' },
       ],
       cart: {
-        licenseType: 'SaaS License',
-        productName: 'Highcharts Core',
+        licenseType: 'Annual License',
+        productName: 'Software One',
         seatPrice: 366,
-        subscription: 'Advantage',
+        subscription: 'Support',
         subscriptionNote: 'Included in license',
         total: 366
       }
@@ -32,18 +32,18 @@ function AppV2() {
       title: 'Subscription+',
       tagline: 'Best value',
       recommended: true,
-      description: 'Use our software and updates as long as you subscribe, with Advantage+ support.',
+      description: 'Use our software and updates as long as you subscribe, with Premium Support.',
       price: '$512',
       pricePeriod: '/year',
       features: [
         { label: 'Latest versions', desc: 'Access to all updates during your subscription' },
-        { label: 'Advantage+ support', desc: 'Priority support with faster response times' },
+        { label: 'Premium Support', desc: 'Priority support with faster response times' },
       ],
       cart: {
-        licenseType: 'SaaS License',
-        productName: 'Highcharts Core',
+        licenseType: 'Annual License',
+        productName: 'Software One',
         seatPrice: 366,
-        subscription: 'Advantage+',
+        subscription: 'Premium Support',
         subscriptionNote: '146.00 USD yearly',
         total: 512
       }
@@ -52,19 +52,19 @@ function AppV2() {
       id: 'lifetime-license',
       title: 'Lifetime',
       tagline: 'Permanent license',
-      description: 'Own the software forever. Includes one year of updates and Advantage+ support.',
+      description: 'Own the software forever. Includes one year of updates and Premium Support.',
       price: '$839',
       pricePeriod: 'one-time',
       renewalNote: '$336 yearly for updates after first year',
       features: [
         { label: 'Lifetime access', desc: 'Permanent access to the version at purchase' },
-        { label: 'Advantage+ support', desc: '1 year included, then 335.60 USD yearly' },
+        { label: 'Premium Support', desc: '1 year included, then 335.60 USD yearly' },
       ],
       cart: {
         licenseType: 'Perpetual License',
-        productName: 'Highcharts Core',
+        productName: 'Software One',
         seatPrice: 839,
-        subscription: 'Advantage+',
+        subscription: 'Premium Support',
         subscriptionNote: 'First year included, then 335.60 USD yearly',
         total: 839
       }
@@ -79,7 +79,7 @@ function AppV2() {
 
       <nav className="v2-nav">
         <div className="v2-nav-inner">
-          <div className="v2-logo">Highcharts</div>
+          <div className="v2-logo"></div>
         </div>
       </nav>
 
@@ -174,7 +174,7 @@ function AppV2() {
                 </div>
 
                 <button className="v2-cart-checkout">Proceed to Checkout</button>
-                <p className="v2-cart-secure">Secure checkout powered by Highsoft</p>
+                <p className="v2-cart-secure">Secure checkout</p>
               </div>
             </aside>
           )}

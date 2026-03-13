@@ -10,19 +10,19 @@ function App() {
       id: 'basic-subscription',
       title: 'Subscription',
       badge: 'RENTED',
-      description: 'Use our software and updates as long as you subscribe, with support-level: Advantage.',
+      description: 'Use our software and updates as long as you subscribe, with support-level: Support.',
       price: '+$0',
       priceSubtext: '',
       yearlyAfterFirst: '$366 yearly after first year',
       footer: {
         updates: 'Latest versions',
-        support: 'Advantage'
+        support: 'Support'
       },
       cart: {
-        licenseType: 'SaaS License',
-        productName: 'Highcharts Core',
+        licenseType: 'Annual License',
+        productName: 'Software One',
         seatPrice: 366,
-        subscription: 'Advantage Subscription',
+        subscription: 'Support Subscription',
         subscriptionNote: 'Included in license',
         total: 366
       }
@@ -31,19 +31,19 @@ function App() {
       id: 'yearly-subscription',
       title: 'Subscription+',
       badge: 'RENTED',
-      description: 'Use our software and updates as long as you subscribe, with support-level: Advantage+.',
+      description: 'Use our software and updates as long as you subscribe, with support-level: Premium Support.',
       price: '+$146',
       priceSubtext: 'yearly',
       yearlyAfterFirst: '$512 yearly after first year',
       footer: {
         updates: 'Latest versions',
-        support: 'Advantage+'
+        support: 'Premium Support'
       },
       cart: {
-        licenseType: 'SaaS License',
-        productName: 'Highcharts Core',
+        licenseType: 'Annual License',
+        productName: 'Software One',
         seatPrice: 366,
-        subscription: 'Advantage+ Subscription',
+        subscription: 'Premium Support Subscription',
         subscriptionNote: '146.00 USD yearly',
         total: 512
       }
@@ -52,20 +52,20 @@ function App() {
       id: 'lifetime-license',
       title: 'Lifetime',
       badge: 'OWNED',
-      description: 'Use our software forever, and have access to support and updates for a whole year for free. Subscribe to Advantage+ to always have the newest version.',
+      description: 'Use our software forever, and have access to support and updates for a whole year for free. Subscribe to Premium Support to always have the newest version.',
       price: '+ $473',
       priceSubtext: 'one-time fee',
       yearlyAfterFirst: '$336 yearly for updates after first year',
       footer: {
         extra: 'Lifetime access to the version available at purchase.',
-        updates: 'Access to version-updates as long as you subscribe to Advantage+.',
-        support: 'Advantage+ 1 year included'
+        updates: 'Access to version-updates as long as you subscribe to Premium Support.',
+        support: 'Premium Support 1 year included'
       },
       cart: {
-        licenseType: 'perpetual SaaS License',
-        productName: 'Highcharts Core',
+        licenseType: 'perpetual Annual License',
+        productName: 'Software One',
         seatPrice: 839,
-        subscription: 'Advantage+ Subscription',
+        subscription: 'Premium Support Subscription',
         subscriptionNote: 'First year included, then 335.60 USD yearly',
         total: 839
       }
