@@ -1,41 +1,43 @@
-# Highsoft Prototype
+# Astro Starter Kit: Minimal
 
-En React-prototype som kjører på GitHub Pages.
-
-## Komme i gang
-
-### Installere avhengigheter
-```bash
-npm install
+```sh
+npm create astro@latest -- --template minimal
 ```
 
-### Kjøre lokalt
-```bash
-npm run dev
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+
+## 🚀 Project Structure
+
+Inside of your Astro project, you'll see the following folders and files:
+
+```text
+/
+├── public/
+├── src/
+│   └── pages/
+│       └── index.astro
+└── package.json
 ```
 
-Åpne [http://localhost:5173](http://localhost:5173) i nettleseren.
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-## Deploye til GitHub Pages
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-### Første gang
-1. Gå til GitHub repository settings
-2. Under "Pages", velg "gh-pages" branch som kilde
-3. Kjør deploy-kommandoen:
+Any static assets, like images, can be placed in the `public/` directory.
 
-```bash
-npm run deploy
-```
+## 🧞 Commands
 
-### Senere deployments
-```bash
-npm run deploy
-```
+All commands are run from the root of the project, from a terminal:
 
-Prototypen vil være tilgjengelig på: `https://lindasvendsen.github.io/Prototype-highsoft/`
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## Struktur
-- `src/App.jsx` - Hovedkomponent
-- `src/main.jsx` - React entry point
-- `index.html` - HTML template
-- `vite.config.js` - Vite konfigurasjon for GitHub Pages
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
